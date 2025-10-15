@@ -5,19 +5,19 @@ func _ready():
 	global.load(global.SaveFolder + ("save0.dat"))
 	if global.loaded:
 		$save1/DeathsTimes.text = "Deaths: " + str(global.deaths) + "\nTime: " + str(global.time.hours) + ":" + str(global.time.minutes) + ":" + str(global.time.seconds)
-		$save1/Difficulty.text = global.difficulty
+		#$save1/Difficulty.text = global.difficulty
 		if global.gameClear: $save1/Clear.visible = true
 	
 	global.load(global.SaveFolder + ("save1.dat"))
 	if global.loaded:
 		$save2/DeathsTimes.text = "Deaths: " + str(global.deaths) + "\nTime: " + str(global.time.hours) + ":" + str(global.time.minutes) + ":" + str(global.time.seconds)
-		$save2/Difficulty.text = global.difficulty
+		#$save2/Difficulty.text = global.difficulty
 		if global.gameClear: $save2/Clear.visible = true
 	
 	global.load(global.SaveFolder + ("save2.dat"))
 	if global.loaded:
 		$save3/DeathsTimes.text = "Deaths: " + str(global.deaths) + "\nTime: " + str(global.time.hours) + ":" + str(global.time.minutes) + ":" + str(global.time.seconds)
-		$save3/Difficulty.text = global.difficulty
+		#$save3/Difficulty.text = global.difficulty
 		if global.gameClear: $save3/Clear.visible = true
 	global.wipe()
 
@@ -42,4 +42,4 @@ func _process(_delta):
 		else:
 			global.saveNum = "2"
 		
-		get_tree().change_scene_to_file("res://Scenes/DifficultySelect.tscn")
+		get_tree().change_scene_to_file("res://An Original Game/Levels/LevelOne.tscn")

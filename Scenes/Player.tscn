@@ -25,7 +25,7 @@ script = ExtResource("4")
 texture = ExtResource("5")
 hframes = 5
 vframes = 3
-frame = 13
+frame = 10
 region_rect = Rect2(0, 99, 32, 20)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
