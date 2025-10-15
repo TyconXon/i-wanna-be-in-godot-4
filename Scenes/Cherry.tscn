@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnhj5d8t80no8"]
+
+[ext_resource type="Texture2D" uid="uid://dhnfxnrt70q7o" path="res://Sprites/killersSpritesheet.png" id="1"]
+[ext_resource type="Script" uid="uid://c7hwyvps6qn8t" path="res://Scripts/Cherry.gd" id="2"]
+[ext_resource type="Animation" path="res://Resources/Cherry.tres" id="3"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtwma"]
+_data = {
+&"Cherry": ExtResource("3")
+}
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("2")
+
+[node name="HitboxA" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-3, -11, 4, -11, 4, -10, 6, -10, 6, -11, 7, -11, 7, -12, 11, -12, 11, -10, 10, -10, 10, -9, 7, -9, 7, -8, 8, -8, 8, -7, 9, -7, 9, -6, 10, -6, 10, -4, 11, -4, 11, 3, 10, 3, 10, 5, 9, 5, 9, 6, 8, 6, 8, 7, 7, 7, 7, 8, 6, 8, 6, 9, 4, 9, 4, 10, -3, 10, -3, 9, -5, 9, -5, 8, -6, 8, -6, 7, -7, 7, -7, 6, -8, 6, -8, 5, -9, 5, -9, 3, -10, 3, -10, -4, -9, -4, -9, -6, -8, -6, -8, -7, -7, -7, -7, -8, -6, -8, -6, -9, -5, -9, -5, -10, -3, -10)
+disabled = true
+
+[node name="HitboxB" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(5, -9, 5, -11, 6, -11, 6, -12, 9, -12, 9, -9, 7, -9, 7, -8, 6, -8, 6, -7, 7, -7, 8, -7, 8, -6, 9, -6, 9, -5, 10, -5, 10, -4, 11, -4, 11, 3, 11, 5, 10, 5, 10, 6, 9, 6, 9, 8, 8, 8, 8, 10, 6, 10, 6, 11, 4, 11, 4, 12, -2, 12, -2, 11, -4, 11, -4, 10, -5, 10, -5, 9, -6, 9, -6, 8, -8, 8, -8, 6, -9, 6, -9, 5, -9, -4, -8, -4, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -5, -7, -5, -8, -4, -8, -4, -9)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+offset = Vector2(0.5, 0)
+region_enabled = true
+region_rect = Rect2(73, 4, 21, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vtwma")
+}
+autoplay = "Cherry"

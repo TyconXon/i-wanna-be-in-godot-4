@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2cej4sp5ra1y"]
+
+[ext_resource type="Script" uid="uid://bkkakycbu0ju1" path="res://Scripts/Bow.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cxaiv4kxmg24b" path="res://Sprites/Bow.png" id="2"]
+
+[node name="Bow" type="Sprite2D"]
+texture = ExtResource("2")
+script = ExtResource("1")

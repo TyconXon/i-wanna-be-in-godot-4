@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmxnr02smy6ug"]
+
+[ext_resource type="Script" uid="uid://cjo7w1d45qh6o" path="res://Scripts/BloodEmitter.gd" id="1"]
+
+[node name="BloodEmitter" type="Node" groups=["Restart"]]
+script = ExtResource("1")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7k5yak17jx4i"]
+
+[ext_resource type="Script" uid="uid://b78flv3ekl6r8" path="res://Scripts/CamPlayerFollow.gd" id="1"]
+
+[node name="CamPlayerFollow" type="Camera2D"]
+limit_left = 100
+limit_top = 100
+limit_right = 100
+limit_bottom = 100
+limit_smoothed = true
+script = ExtResource("1")

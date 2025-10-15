@@ -1,0 +1,159 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8n70353lukdm"]
+
+[ext_resource type="PackedScene" uid="uid://bnhj5d8t80no8" path="res://Scenes/Cherry.tscn" id="2"]
+[ext_resource type="Script" uid="uid://bsfiae8jty87j" path="res://Scripts/Menu.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bxa2va0wb13dp" path="res://Sprites/kidSpritesheet.png" id="4"]
+[ext_resource type="Animation" path="res://Resources/Menu.tres" id="5"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2c3o"]
+_data = {
+&"Idle 2": ExtResource("5")
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("3")
+
+[node name="Back" type="Label" parent="."]
+text = "[Z] Back"
+vertical_alignment = 1
+
+[node name="Accept" type="Label" parent="."]
+text = "[Shift] Accept"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="save1" type="Label" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 325.0
+offset_right = 169.0
+offset_bottom = 390.0
+grow_vertical = 2
+text = "Save 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Difficulty" type="Label" parent="save1"]
+layout_mode = 0
+offset_top = -86.0
+offset_right = 64.0
+offset_bottom = -15.0
+text = "No Data"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeathsTimes" type="Label" parent="save1"]
+layout_mode = 0
+offset_top = -33.0
+offset_right = 59.0
+offset_bottom = 16.0
+text = "Deaths:
+Time:"
+vertical_alignment = 1
+
+[node name="Clear" type="Label" parent="save1"]
+visible = false
+layout_mode = 0
+text = "Clear!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="save2" type="Label" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 348.0
+offset_top = 325.0
+offset_right = 398.0
+offset_bottom = 348.0
+grow_vertical = 2
+text = "Save 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Difficulty" type="Label" parent="save2"]
+layout_mode = 0
+text = "No Data"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeathsTimes" type="Label" parent="save2"]
+layout_mode = 0
+text = "Deaths:
+Time:"
+vertical_alignment = 1
+
+[node name="Clear" type="Label" parent="save2/DeathsTimes"]
+visible = false
+layout_mode = 0
+text = "Clear!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="save3" type="Label" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 551.0
+offset_top = 325.0
+offset_right = 601.0
+offset_bottom = 348.0
+grow_vertical = 2
+text = "Save 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Difficulty" type="Label" parent="save3"]
+layout_mode = 0
+text = "No Data"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeathsTimes" type="Label" parent="save3"]
+layout_mode = 0
+text = "Deaths:
+Time:"
+vertical_alignment = 1
+
+[node name="Clear" type="Label" parent="save3/DeathsTimes"]
+visible = false
+layout_mode = 0
+text = "Clear!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Picker" type="Node2D" parent="."]
+position = Vector2(144, 456)
+
+[node name="Cherry" parent="Picker" instance=ExtResource("2")]
+position = Vector2(-56, 0)
+
+[node name="Cherry2" parent="Picker" instance=ExtResource("2")]
+position = Vector2(-36, 0)
+
+[node name="Cherry3" parent="Picker" instance=ExtResource("2")]
+position = Vector2(-16, 0)
+
+[node name="Cherry4" parent="Picker" instance=ExtResource("2")]
+position = Vector2(20, 0)
+
+[node name="Cherry5" parent="Picker" instance=ExtResource("2")]
+position = Vector2(40, 0)
+
+[node name="Cherry6" parent="Picker" instance=ExtResource("2")]
+position = Vector2(60, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Picker"]
+position = Vector2(0, -8)
+texture = ExtResource("4")
+hframes = 5
+vframes = 3
+region_rect = Rect2(66, 0, 32, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Picker"]
+libraries = {
+&"": SubResource("AnimationLibrary_s2c3o")
+}
+autoplay = "Idle 2"

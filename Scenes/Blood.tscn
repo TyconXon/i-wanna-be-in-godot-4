@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwxccl65e3ct2"]
+
+[ext_resource type="Texture2D" uid="uid://bq4pns4hmdhbe" path="res://Sprites/Blood.png" id="1"]
+[ext_resource type="Script" uid="uid://bbyjuuwp15i6l" path="res://Scripts/Blood.gd" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1, 1)
+
+[node name="Blood" type="CharacterBody2D" groups=["Blood"]]
+collision_layer = 4
+collision_mask = 255
+script = ExtResource("2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+offset = Vector2(0.5, 0)
+hframes = 26
+region_rect = Rect2(139, 13, 3, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+disabled = true
+
+[node name="VisibilityNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.1, 0.1)
+rect = Rect2(-5, -5, 10, 10)
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

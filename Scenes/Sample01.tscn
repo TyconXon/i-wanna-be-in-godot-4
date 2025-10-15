@@ -1,0 +1,366 @@
+[gd_scene load_steps=20 format=4 uid="uid://87lrc8hhju3t"]
+
+[ext_resource type="PackedScene" uid="uid://6alfqxy3ebnm" path="res://Scenes/Tiles.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dso58vayp32nc" path="res://Scenes/BlockFake.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Spike.tscn" id="3"]
+[ext_resource type="TileSet" uid="uid://tlufiff5mcn8" path="res://Resources/Title.tres" id="3_i6hhb"]
+[ext_resource type="PackedScene" uid="uid://bnhj5d8t80no8" path="res://Scenes/Cherry.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/PlayerStart.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://Scenes/Platform.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://Scenes/BlockMove.tscn" id="7"]
+[ext_resource type="Script" uid="uid://ccxyd772d2ls4" path="res://Scripts/OutsideRoomChanger.gd" id="8"]
+[ext_resource type="PackedScene" path="res://Scenes/Save.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://jfbvrv8rsapf" path="res://Scenes/Sample02.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://dwa0yh15iuquc" path="res://Scenes/BlockInvis.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://Scenes/Water.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://Scenes/End.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://Scenes/Warp.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://Scenes/TrapActivator.tscn" id="15"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(96, 32)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(96, 16)
+
+[node name="Sample01" type="Node2D"]
+
+[node name="PlayerStart" parent="." instance=ExtResource("5")]
+position = Vector2(112, 176)
+
+[node name="TileLayer" type="Node" parent="."]
+
+[node name="Tiles" parent="TileLayer" instance=ExtResource("1")]
+position = Vector2(384, 0)
+tile_map_data = PackedByteArray("AAD0/wYAAAACAAIAAAD0/wEAAAACAAIAAAD0/wIAAAACAAIAAAD0/wMAAAACAAIAAAD0/wQAAAACAAIAAAD0/wUAAAACAAIAAAD0/wAAAAACAAIAAAD1/wAAAAACAAIAAAD2/wAAAAACAAIAAAD3/wAAAAACAAIAAAD4/wAAAAACAAIAAAD5/wAAAAACAAIAAAD6/wAAAAACAAIAAAD7/wAAAAACAAIAAAD8/wAAAAACAAIAAAD9/wAAAAACAAIAAAABAAAAAAACAAIAAAACAAAAAAACAAIAAAADAAAAAAACAAIAAAAEAAAAAAACAAIAAAAFAAAAAAACAAIAAAAGAAAAAAACAAIAAAAHAAAAAAACAAIAAAAIAAAAAAACAAIAAAAJAAAAAAACAAIAAAAKAAAAAAACAAIAAAALAAAAAAACAAIAAAAMAAAAAAACAAIAAAAMAAEAAAACAAIAAAAMAAIAAAACAAIAAAAMAAMAAAACAAIAAAAMAAQAAAACAAIAAAAMAAUAAAACAAIAAAAMAAYAAAACAAIAAAAMAAcAAAACAAIAAAAMAAgAAAACAAIAAAAMAAkAAAACAAIAAAAMAAoAAAACAAIAAAAMAAsAAAACAAIAAAAMAAwAAAACAAIAAAAMAA0AAAACAAIAAAAMAA4AAAACAAIAAAAMAA8AAAACAAIAAAAMABAAAAACAAIAAAAMABEAAAACAAIAAAAMABIAAAACAAIAAAAMABMAAAACAAIAAAD0/xIAAAACAAIAAAD0/xMAAAACAAIAAAD1/xIAAAACAAIAAAD1/xMAAAACAAIAAAD2/xIAAAACAAIAAAD2/xMAAAACAAIAAAD3/xIAAAACAAIAAAD3/xMAAAACAAIAAAD4/xIAAAACAAIAAAD4/xMAAAACAAIAAAD5/xIAAAACAAIAAAD5/xMAAAACAAIAAAD6/xIAAAACAAIAAAD6/xMAAAACAAIAAAD7/xIAAAACAAIAAAD7/xMAAAACAAIAAAD8/xIAAAACAAIAAAD8/xMAAAACAAIAAAD9/xIAAAACAAIAAAD9/xMAAAACAAIAAAD+/xIAAAACAAIAAAD+/xMAAAACAAIAAAD//xIAAAACAAIAAAD//xMAAAACAAIAAAAAABIAAAACAAIAAAAAABMAAAACAAIAAAABABIAAAACAAIAAAABABMAAAACAAIAAAACABIAAAACAAIAAAACABMAAAACAAIAAAADABIAAAACAAIAAAADABMAAAACAAIAAAAEABIAAAACAAIAAAAEABMAAAACAAIAAAAFABIAAAACAAIAAAAFABMAAAACAAIAAAAGABIAAAACAAIAAAAGABMAAAACAAIAAAAHABIAAAACAAIAAAAHABMAAAACAAIAAAAIABIAAAACAAIAAAAIABMAAAACAAIAAAAJABIAAAACAAIAAAAJABMAAAACAAIAAAAKABIAAAACAAIAAAAKABMAAAACAAIAAAALABIAAAACAAIAAAALABMAAAACAAIAAAD0/xQAAAACAAIAAAD1/xQAAAACAAIAAAD2/xQAAAACAAIAAAD3/xQAAAACAAIAAAD4/xQAAAACAAIAAAD5/xQAAAACAAIAAAD6/xQAAAACAAIAAAD7/xQAAAACAAIAAAD8/xQAAAACAAIAAAD9/xQAAAACAAIAAAD+/xQAAAACAAIAAAD//xQAAAACAAIAAAAAABQAAAACAAIAAAABABQAAAACAAIAAAACABQAAAACAAIAAAADABQAAAACAAIAAAAEABQAAAACAAIAAAAFABQAAAACAAIAAAAGABQAAAACAAIAAAAHABQAAAACAAIAAAAIABQAAAACAAIAAAAJABQAAAACAAIAAAAKABQAAAACAAIAAAALABQAAAACAAIAAAAMABQAAAACAAIAAAD0/w8AAAACAAIAAAD0/xAAAAACAAIAAAD0/xEAAAACAAIAAAD5/w4AAAACAAIAAAABAA4AAAACAAIAAAD1/w8AAAACAAIAAAD2/w8AAAACAAIAAAD3/w8AAAACAAIAAAD4/wYAAAACAAIAAAD5/wYAAAACAAIAAAD9/wYAAAACAAIAAAABAAYAAAACAAIAAAABAAcAAAACAAIAAAD9/wcAAAACAAIAAAD+/wMAAAACAAIAAAD//wMAAAACAAIAAAAAAAMAAAACAAIAAAAFAAYAAAACAAIAAAAFAAcAAAACAAIAAAAGAAYAAAACAAIAAAAHAAwAAAACAAIAAAAIAAwAAAACAAIAAAAJAAwAAAACAAIAAAAKAAwAAAACAAIAAAALAAwAAAACAAIAAAACAAcAAAACAAIAAAADAAcAAAACAAIAAAAEAAcAAAACAAIAAAD6/wcAAAACAAIAAAD7/wcAAAACAAIAAAD8/wcAAAACAAIAAAD0/woAAAACAAIAAAD1/woAAAACAAIAAAD2/woAAAACAAIAAAD3/woAAAACAAIAAAD4/woAAAACAAIAAAD0/wcAAAACAAIAAAD0/wgAAAACAAIAAAD0/wkAAAACAAIAAAD0/wsAAAACAAIAAAA=")
+tile_set = ExtResource("3_i6hhb")
+
+[node name="Water" type="Node" parent="TileLayer"]
+
+[node name="Water" parent="TileLayer/Water" instance=ExtResource("12")]
+position = Vector2(240, 208)
+scale = Vector2(3, 1)
+
+[node name="Water2" parent="TileLayer/Water" instance=ExtResource("12")]
+position = Vector2(496, 208)
+scale = Vector2(3, 1)
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Platforms" type="Node" parent="Objects"]
+
+[node name="Platform" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(48, 200)
+sprite = "1"
+
+[node name="Platform2" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(80, 200)
+sprite = "1"
+
+[node name="Platform3" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(112, 200)
+sprite = "1"
+
+[node name="Platform4" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(464, 552.1)
+
+[node name="Platform5" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(496, 552.1)
+
+[node name="Platform6" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(528, 552.1)
+
+[node name="Platform7" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(560, 552.1)
+
+[node name="Platform8" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(592, 552.1)
+
+[node name="Platform9" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(624, 552.1)
+
+[node name="Platform10" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(656, 552.1)
+
+[node name="Platform11" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(688, 552.1)
+
+[node name="Platform12" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(720, 552.1)
+
+[node name="Platform13" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(752, 552.1)
+
+[node name="Platform14" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(304, 456)
+speed = Vector2(2, 0)
+
+[node name="Platform15" parent="Objects/Platforms" instance=ExtResource("6")]
+position = Vector2(688, 200)
+speed = Vector2(0, 2)
+
+[node name="Saves" type="Node" parent="Objects"]
+
+[node name="Save" parent="Objects/Saves" instance=ExtResource("9")]
+position = Vector2(48, 176)
+
+[node name="Save2" parent="Objects/Saves" instance=ExtResource("9")]
+position = Vector2(48, 464)
+
+[node name="Save3" parent="Objects/Saves" instance=ExtResource("9")]
+position = Vector2(-112, 240)
+
+[node name="ChangeBlocks" type="Node" parent="Objects"]
+
+[node name="BlockInvis" parent="Objects/ChangeBlocks" instance=ExtResource("11")]
+position = Vector2(-48, 272)
+
+[node name="BlockInvis2" parent="Objects/ChangeBlocks" instance=ExtResource("11")]
+position = Vector2(-496, 496)
+
+[node name="BlockInvis3" parent="Objects/ChangeBlocks" instance=ExtResource("11")]
+position = Vector2(-496, 240)
+
+[node name="BlockFake" parent="Objects/ChangeBlocks" instance=ExtResource("2")]
+position = Vector2(-432, 496)
+
+[node name="BlockFake2" parent="Objects/ChangeBlocks" instance=ExtResource("2")]
+position = Vector2(-432, 464)
+
+[node name="BlockFake3" parent="Objects/ChangeBlocks" instance=ExtResource("2")]
+position = Vector2(-432, 432)
+
+[node name="BlockFake4" parent="Objects/ChangeBlocks" instance=ExtResource("2")]
+position = Vector2(-432, 400)
+
+[node name="BlockMove" parent="Objects/ChangeBlocks" instance=ExtResource("7")]
+position = Vector2(528, 400)
+
+[node name="Warps" type="Node" parent="Objects"]
+
+[node name="Warp" parent="Objects/Warps" instance=ExtResource("14")]
+position = Vector2(-176, 144)
+scene = ExtResource("13")
+
+[node name="Killers" type="Node" parent="."]
+
+[node name="Spikes" type="Node" parent="Killers"]
+
+[node name="Spike" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(208, 208)
+
+[node name="Spike2" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(240, 208)
+
+[node name="Spike3" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(272, 208)
+
+[node name="Spike4" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(464, 208)
+
+[node name="Spike5" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(496, 208)
+
+[node name="Spike6" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(528, 208)
+
+[node name="Spike9" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(624, 368)
+
+[node name="Spike10" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(656, 368)
+
+[node name="Spike11" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(688, 368)
+
+[node name="Spike12" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(720, 368)
+
+[node name="Spike13" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(752, 368)
+
+[node name="Spike21" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(48, 560)
+
+[node name="Spike22" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(80, 560)
+
+[node name="Spike23" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(112, 560)
+
+[node name="Spike24" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(144, 560)
+
+[node name="Spike25" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(176, 560)
+
+[node name="Spike26" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(208, 560)
+
+[node name="Spike27" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(240, 560)
+
+[node name="Spike28" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(272, 560)
+
+[node name="Spike29" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(304, 560)
+
+[node name="Spike30" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(336, 560)
+
+[node name="Spike31" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(368, 560)
+
+[node name="Spike32" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(400, 560)
+
+[node name="Spike33" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(432, 560)
+
+[node name="Spike34" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(464, 560)
+
+[node name="Spike35" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(496, 560)
+
+[node name="Spike36" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(528, 560)
+
+[node name="Spike37" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(560, 560)
+
+[node name="Spike38" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(592, 560)
+
+[node name="Spike39" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(624, 560)
+
+[node name="Spike40" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(656, 560)
+
+[node name="Spike41" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(688, 560)
+
+[node name="Spike42" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(720, 560)
+
+[node name="Spike43" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(752, 560)
+
+[node name="Spike14" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(624, 48)
+rotation = -3.14159
+flip = true
+
+[node name="Spike15" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(656, 48)
+rotation = -3.14159
+flip = true
+
+[node name="Spike16" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(688, 48)
+rotation = -3.14159
+flip = true
+
+[node name="Spike17" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(720, 48)
+rotation = -3.14159
+flip = true
+
+[node name="Spike18" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(752, 48)
+rotation = -3.14159
+flip = true
+
+[node name="Spike7" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(624, 208)
+rotation = 1.57079
+
+[node name="Spike8" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(592, 240)
+rotation = 1.57079
+
+[node name="Spike19" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(208, 464)
+rotation = 1.57079
+
+[node name="Spike20" parent="Killers/Spikes" instance=ExtResource("3")]
+position = Vector2(400, 464)
+rotation = -1.57079
+flip = true
+
+[node name="Cherries" type="Node" parent="Killers"]
+
+[node name="Cherry" parent="Killers/Cherries" instance=ExtResource("4")]
+position = Vector2(64, 288)
+
+[node name="Cherry2" parent="Killers/Cherries" instance=ExtResource("4")]
+position = Vector2(-448, 288)
+scale = Vector2(2, 2)
+speed = Vector2(2, 0)
+
+[node name="Traps" type="Node" parent="Killers"]
+
+[node name="Spike" parent="Killers/Traps" instance=ExtResource("3")]
+position = Vector2(336, 304)
+trapNum = 2
+
+[node name="Spike2" parent="Killers/Traps" instance=ExtResource("3")]
+position = Vector2(368, 304)
+trapNum = 2
+
+[node name="Spike3" parent="Killers/Traps" instance=ExtResource("3")]
+position = Vector2(-80, 304)
+rotation = -3.14159
+flip = true
+trapNum = 1
+
+[node name="Spike4" parent="Killers/Traps" instance=ExtResource("3")]
+position = Vector2(-112, 304)
+rotation = -3.14159
+flip = true
+trapNum = 1
+
+[node name="TrapActivators" type="Node" parent="Killers"]
+
+[node name="TrapActivator" parent="Killers/TrapActivators" instance=ExtResource("15")]
+trapNum = 1
+direction = 90
+speed = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killers/TrapActivators/TrapActivator"]
+position = Vector2(-64, 496)
+shape = SubResource("1")
+
+[node name="TrapActivator2" parent="Killers/TrapActivators" instance=ExtResource("15")]
+trapNum = 2
+direction = -90
+speed = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killers/TrapActivators/TrapActivator2"]
+position = Vector2(368, 240)
+shape = SubResource("2")
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Room0" type="Camera2D" parent="Rooms"]
+position = Vector2(400, 304)
+
+[node name="Room1" type="Camera2D" parent="Rooms"]
+position = Vector2(-400, 304)
+
+[node name="Blood" type="Node" parent="."]
+
+[node name="OutsideRoomChanger" type="Area2D" parent="."]
+script = ExtResource("8")
+scene = ExtResource("10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideRoomChanger"]
+position = Vector2(368, 0)
+shape = SubResource("3")

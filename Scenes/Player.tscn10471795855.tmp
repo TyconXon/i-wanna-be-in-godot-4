@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://das3caiygsrmo"]
+
+[ext_resource type="Animation" path="res://Resources/Menu.tres" id="1"]
+[ext_resource type="Animation" path="res://Resources/Run.tres" id="2"]
+[ext_resource type="Animation" path="res://Resources/Jump.tres" id="3"]
+[ext_resource type="Script" uid="uid://cu0qsdqvmbdgg" path="res://Scripts/Player.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bxa2va0wb13dp" path="res://Sprites/kidSpritesheet.png" id="5"]
+[ext_resource type="Animation" path="res://Resources/Slide.tres" id="6"]
+[ext_resource type="Animation" path="res://Resources/Fall.tres" id="7"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52ee3"]
+_data = {
+&"Fall": ExtResource("7"),
+&"Idle": ExtResource("1"),
+&"Jump": ExtResource("3"),
+&"Run": ExtResource("2"),
+&"Slide": ExtResource("6")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["Kid"]]
+script = ExtResource("4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("5")
+hframes = 5
+vframes = 3
+frame = 13
+region_rect = Rect2(0, 99, 32, 20)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(6, -5, 7, -4, 7, 15, 6, 16, -3, 16, -4, 15, -4, -4, -3, -5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_52ee3")
+}
+
+[node name="SFXplayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area"]
+visible = false
+polygon = PackedVector2Array(7, -5, 7, 16, -4, 16, -4, -5)
+
+[node name="VineCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+enabled = false

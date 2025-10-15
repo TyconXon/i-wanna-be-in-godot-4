@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dc407gp2wj6i3"]
+
+[node name="Dialog" type="CanvasLayer"]
+layer = 10
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+horizontal_alignment = 1
+vertical_alignment = 2
