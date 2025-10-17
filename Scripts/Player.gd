@@ -17,7 +17,7 @@ var jumpTime = 3
 
 var djump = 1 # Allow the player to double jump as soon as he spawns
 var maxHSpeed = 3 # Max horizontal speed
-var maxVSpeed = 9 # Max vertical speed
+var maxVSpeed = 9	 # Max vertical speed
 var prevPos = Vector2()
 var slipBlockTouching
 var onVineR

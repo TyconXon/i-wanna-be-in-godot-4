@@ -12,7 +12,7 @@ config_version=5
 
 config/name="I Wanna be the Godot Engine Afely Edition"
 run/main_scene="res://Scenes/Title.tscn"
-config/features=PackedStringArray("4.4")
+config/features=PackedStringArray("4.5")
 run/max_fps=50
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/fullsize=false
@@ -166,11 +166,15 @@ resetButton={
 
 [physics]
 
+common/physics_ticks_per_second=50
+2d/default_linear_damp=0.0
+2d/default_angular_damp=0.0
+2d/solver/contact_max_allowed_penetration=0.01
 common/physics_fps=50
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.501961, 1, 1, 1)
+environment/defaults/default_clear_color=Color(0.76862746, 0.84313726, 0.96862745, 1)
 quality/2d/use_pixel_snap=true
-environment/default_clear_color=Color(0.501961, 1, 1, 1)
+environment/default_clear_color=Color(0.76862746, 0.84313726, 0.96862745, 1)

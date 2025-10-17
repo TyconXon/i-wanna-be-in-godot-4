@@ -1,9 +1,11 @@
-[gd_resource type="TileSet" load_steps=30 format=3 uid="uid://bk8bgrehmsqc8"]
+[gd_resource type="TileSet" load_steps=32 format=3 uid="uid://bk8bgrehmsqc8"]
 
 [ext_resource type="Texture2D" uid="uid://ckuqfy8aca7eh" path="res://Sprites/AllTiles.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bjfh8hnmytqym" path="res://Sprites/WalljumpR.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://vri34os2s7x0" path="res://An Original Game/Assets/200504-1.png.png" id="2_2ych8"]
 [ext_resource type="PackedScene" uid="uid://l0kggp6rg7ps" path="res://Scenes/Spike.tscn" id="4_5rk5c"]
+[ext_resource type="PackedScene" path="res://Scenes/Save.tscn" id="6_h5s7e"]
+[ext_resource type="PackedScene" path="res://Scenes/SaveBlocker.tscn" id="7_h5xfn"]
 [ext_resource type="PackedScene" uid="uid://dk77nlwiut58w" path="res://Scenes/Platform.tscn" id="7_ova7n"]
 [ext_resource type="PackedScene" uid="uid://bby4hp5pnykgr" path="res://Scenes/KillerBlock.tscn" id="9_h5xfn"]
 [ext_resource type="PackedScene" uid="uid://clhpcmiati5d7" path="res://Scenes/JumpRefresher.tscn" id="10_5icy5"]
@@ -1138,6 +1140,8 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bn0g1"]
 resource_name = "2 Basic"
 scenes/1/scene = ExtResource("4_5rk5c")
+scenes/2/scene = ExtResource("6_h5s7e")
+scenes/3/scene = ExtResource("7_h5xfn")
 scenes/4/scene = ExtResource("9_h5xfn")
 scenes/5/scene = ExtResource("10_5icy5")
 scenes/6/scene = ExtResource("11_ehmce")

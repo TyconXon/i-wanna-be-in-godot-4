@@ -13,8 +13,8 @@ func _ready():
 		
 		hspeed = bulletDir * 16
 
-func _process(_delta):
-	position.x += hspeed
+func _physics_process(_delta):
+	position.x += hspeed 
 	
 	# Destroy the bullet in 40 frames
 	time += 1
