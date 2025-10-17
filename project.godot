@@ -32,6 +32,7 @@ settings/fps/force_fps=50
 
 window/size/viewport_width=800
 window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
 window/size/width=800
 window/size/height=608
 
