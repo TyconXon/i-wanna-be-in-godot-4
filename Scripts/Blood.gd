@@ -26,7 +26,10 @@ func _process(_delta):
 	
 	var collision = move_and_collide(velocity)
 	if collision:
-		#if collision.collider.name == "Tiles":
+		if not collision.get_collider() is CharacterBody2D:
+			if not collision.get_collider().name == "Tiles":
+				#print(collision.get_collider().name)
+				pass
 			speed = 0
 			grav = 0
 			off = 0

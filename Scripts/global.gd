@@ -6,7 +6,7 @@ var deaths = 0
 var timer = Timer.new()
 var autosaveTimer = Timer.new()
 var time = {"seconds":0, "minutes":0, "hours":0}
-var infJump = true
+var infJump = false
 var saveScene
 var savePlayerPos
 var saveGrav

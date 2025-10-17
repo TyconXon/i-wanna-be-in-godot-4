@@ -5,7 +5,7 @@ var time = 0
 
 func _ready():
 	randomize()
-	var bloodAmount = round(randf_range(160, 320))
+	var bloodAmount = round(randf_range(320, 520))
 	if get_parent().has_node("Blood"):
 		while get_parent().get_node("Blood").get_child_count() < bloodAmount:
 			var blood = BloodScene.instantiate()
