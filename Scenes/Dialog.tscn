@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dc407gp2wj6i3"]
 
-[node name="Dialog" type="CanvasLayer"]
-layer = 10
+[node name="Dialog" type="Node"]
 
 [node name="Node2D" type="Node2D" parent="."]
 

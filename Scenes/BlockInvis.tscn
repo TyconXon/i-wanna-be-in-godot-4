@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ckuqfy8aca7eh" path="res://Sprites/AllTiles.png" id="1"]
 [ext_resource type="Script" uid="uid://bksog7ycmmeef" path="res://Scripts/BlockInvis.gd" id="2"]
-[ext_resource type="AudioStream" uid="uid://0wh4p0qtkkr" path="res://Audio/BlockChange.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://b8iv3e83tleck" path="res://Audio/BlockChange.wav" id="3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(32, 32)
